@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo 3D</title>
+  
+  <!-- Favicon estándar -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon_io/favicon.ico">
+  
+  <!-- Iconos para dispositivos Android -->
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+  
+  <!-- Icono para dispositivos Apple -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  
+  <!-- Archivo manifest para compatibilidad con apps web progresivas -->
+  <link rel="manifest" href="favicon_io/site.webmanifest">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Modelo3D.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <style>
+    @font-face {
+      font-family: "3D Font";
+      src: url("organical-font/Organical.ttf") format("truetype");
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: "3D Font", sans-serif;
+      text-align: center;
+    }
+
+    #canvas-container {
+      margin-bottom: 10px; 
+    }
+
+    footer {
+      font-size: 25px; 
+      line-height: 2; 
+      letter-spacing: 2px; 
+      text-align: center; 
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="canvas-container"></div> 
+
+  <footer>
+     <p>Modelo En Tres Dimensiones</p>
+    </footer>
+</body>
+
+</html>
