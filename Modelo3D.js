@@ -28,11 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
   backLight.position.set(-5, -10, -7.5);
   scene.add(backLight);
 
-  // Cargar el archivo OBJ
-  const loader = new THREE.OBJLoader();
+  // Cargar el archivo GLB
+  const loader = new THREE.GLTFLoader();
   loader.load(
-    'models/Fresa.obj', // Ruta al archivo .OBJ
-    (obj) => {
+    'models/Fresa.glb', // Ruta al archivo .glb
+    (gltf) => {
+      const obj = gltf.scene;
+      obj.traverse((child) => {
+        if (child.isMesh) {
+          const material = child.material;
+          if (material) {
+            // Remove invalid properties
+            delete material.specularIntensity;
+            delete material.specularColor;
+          }
+        }
+      });
       obj.position.set(0, 0, 0); // Ajusta la posición del modelo
       obj.scale.set(1, 1, 1); // Ajusta el tamaño del modelo
       scene.add(obj);
@@ -41,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log((xhr.loaded / xhr.total * 100) + '% cargado');
     },
     (error) => {
-      console.error('Error al cargar el archivo OBJ:', error);
+      console.error('Error al cargar el archivo GLB:', error);
     }
   );
 
